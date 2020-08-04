@@ -1,10 +1,17 @@
 /*
 * Globals
 */
+html {
+  scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #555;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1, .h1,
@@ -19,15 +26,38 @@ h6, .h6 {
 }
 
 
-  
-  
+/*
+  * Header
+  */
+
+.video-container{
+
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-container video {
+  object-fit: cover;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.overlay{
+position: absolute;
+bottom: 100px;
+right: 100px;
+}
+
+
 /*
   * Masthead for nav
   */
 
-  #KTBlogo {
-    width: 200px;
-  }
+#KTBlogo {
+  width: 200px;
+}
 
 .blog-masthead {
   background-color: rgba(121, 201, 213, 0.25);
@@ -105,10 +135,9 @@ h6, .h6 {
 /*
   * Main column and sidebar layout
   */
+.my-hr{
+  color: black;
 
-.blog-main {
-  font-size: 18px;
-  line-height: 1.5;
 }
 
 /* Sidebar modules for boxing content */
@@ -140,35 +169,12 @@ h6, .h6 {
   border-radius: 30px;
 }
 
-
-/*
-  * Blog posts
-  */
-
-.blog-post {
-  margin-bottom: 60px;
-}
-.blog-post-title {
-  margin-bottom: 5px;
-  font-size: 40px;
-}
-.blog-post-meta {
-  margin-bottom: 20px;
-  color: #999;
+a {
+  /*color: #436eb5;*/
+  color: black;
 }
 
 
 /*
   * Footer
   */
-
-.blog-footer {
-  padding: 40px 0;
-  color: #999;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
-}
-.blog-footer p:last-child {
-  margin-bottom: 0;
-}

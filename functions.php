@@ -26,3 +26,143 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu'),
     'footer' => __( 'Footer Menu'),
 ) );
+
+/**
+ * Footer Partner callout section
+ */
+
+ function ktb_footer_callout($wp_customize) {
+    $wp_customize->add_section('ktb-footer-callout-section', array(
+        'title' => 'Footer Partner',
+    ));
+
+
+
+    $wp_customize->add_setting('ktb-footer-callout-image');
+
+    $wp_customize->add_control( new WP_Customize_Media_Control(
+        $wp_customize, 'ktb-footer-callout-image-control', array(
+            'label' => 'Bild von Partner 1',
+            'section' => 'ktb-footer-callout-section',
+            'settings' => 'ktb-footer-callout-image',
+        )
+        )); 
+
+    $wp_customize->add_setting('ktb-footer-callout-link');
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
+    'ktb-footer-callout-link', array(
+        'label'=> 'Link zu Partner 1',
+        'section' => 'ktb-footer-callout-section',
+        'settings' => 'ktb-footer-callout-link',
+        'type' => 'url'
+
+    )));
+
+    $wp_customize->add_setting('ktb-footer-callout-image2');
+
+    $wp_customize->add_control( new WP_Customize_Media_Control(
+        $wp_customize, 'ktb-footer-callout-image-control2', array(
+            'label' => 'Bild von Partner 2',
+            'section' => 'ktb-footer-callout-section',
+            'settings' => 'ktb-footer-callout-image2',
+        )
+        )); 
+
+    $wp_customize->add_setting('ktb-footer-callout-link2');
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
+    'ktb-footer-callout-link2', array(
+        'label'=> 'Link zu Partner 2',
+        'section' => 'ktb-footer-callout-section',
+        'settings' => 'ktb-footer-callout-link2',
+        'type' => 'url'
+
+    )));
+
+    $wp_customize->add_setting('ktb-footer-callout-image3');
+
+    $wp_customize->add_control( new WP_Customize_Media_Control(
+        $wp_customize, 'ktb-footer-callout-image-control3', array(
+            'label' => 'Bild von Partner 3',
+            'section' => 'ktb-footer-callout-section',
+            'settings' => 'ktb-footer-callout-image3',
+        )
+        )); 
+    
+    $wp_customize->add_setting('ktb-footer-callout-link3');
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
+    'ktb-footer-callout-link3', array(
+        'label'=> 'Link zu Partner 3',
+        'section' => 'ktb-footer-callout-section',
+        'settings' => 'ktb-footer-callout-link3',
+        'type' => 'url'
+
+    )));
+        
+    $wp_customize->add_setting('ktb-footer-callout-image4');
+
+    $wp_customize->add_control( new WP_Customize_Media_Control(
+        $wp_customize, 'ktb-footer-callout-image-control4', array(
+            'label' => 'Bild von Partner 4',
+            'section' => 'ktb-footer-callout-section',
+            'settings' => 'ktb-footer-callout-image4',
+        )
+        )); 
+
+    $wp_customize->add_setting('ktb-footer-callout-link4');
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
+    'ktb-footer-callout-link4', array(
+        'label'=> 'Link zu Partner 4',
+        'section' => 'ktb-footer-callout-section',
+        'settings' => 'ktb-footer-callout-link4',
+        'type' => 'url'
+
+    )));
+
+    $wp_customize->add_setting('ktb-footer-callout-image5');
+
+    $wp_customize->add_control( new WP_Customize_Media_Control(
+        $wp_customize, 'ktb-footer-callout-image-control5', array(
+            'label' => 'Bild von Partner 5',
+            'section' => 'ktb-footer-callout-section',
+            'settings' => 'ktb-footer-callout-image5',
+        )
+        )); 
+
+    $wp_customize->add_setting('ktb-footer-callout-link5');
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
+    'ktb-footer-callout-link5', array(
+        'label'=> 'Link zu Partner 5',
+        'section' => 'ktb-footer-callout-section',
+        'settings' => 'ktb-footer-callout-link5',
+        'type' => 'url'
+
+    )));
+    $wp_customize->add_setting('ktb-footer-callout-image6');
+
+    $wp_customize->add_control( new WP_Customize_Media_Control(
+        $wp_customize, 'ktb-footer-callout-image-control6', array(
+            'label' => 'Bild von Partner 6',
+            'section' => 'ktb-footer-callout-section',
+            'settings' => 'ktb-footer-callout-image6',
+        )
+        )); 
+
+    $wp_customize->add_setting('ktb-footer-callout-link6');
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
+    'ktb-footer-callout-link6', array(
+        'label'=> 'Link zu Partner 6',
+        'section' => 'ktb-footer-callout-section',
+        'settings' => 'ktb-footer-callout-link6',
+        'type' => 'url'
+
+    )));
+    }
+  
+
+ add_action( 'customize_register', 'ktb_footer_callout' );

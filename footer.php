@@ -1,7 +1,7 @@
 </div>
 
 <div class="container mt-4">
-    <hr class="my-hr">
+    <hr>
     <div class="row justify-content-center h-25">
 
         <?php if(get_theme_mod('ktb-footer-callout-image') != null) { ?>
@@ -56,7 +56,7 @@
 
 
     </div>
-    <hr class="my-hr">
+    <hr>
 
 </div>
 

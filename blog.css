@@ -126,20 +126,6 @@ right: 100px;
 }
 
 
-
-  
-  /*      Index      */
-
-
-
-/*
-  * Main column and sidebar layout
-  */
-.my-hr{
-  color: black;
-
-}
-
 /* Sidebar modules for boxing content */
 .sidebar-module {
   padding: 15px;
@@ -156,12 +142,30 @@ right: 100px;
   margin-bottom: 0;
 }
 
+/**
+* Sportarten
+*/
 
+.sport-container{
+  background-color: lightblue;
+  width: 18rem;
+  height: 18rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-wrap{
+  word-wrap: break-word;
+  width: 100%;
+}
 
 
 /*
-  * Footer
-  */
+* Footer
+*/
 
   .footer-bottom {
     background-color: rgba(121, 201, 213, 0.25);

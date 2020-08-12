@@ -1,5 +1,13 @@
 <?php
 
+
+function console_log( $data ){
+    echo '<script>';
+    echo 'console.log('. json_encode( $data ) .')';
+    echo '</script>';
+  }
+
+
 /**
  * Adding Styles and loading bootstrap
  */
@@ -229,5 +237,43 @@ register_nav_menus( array(
 
 add_action( 'customize_register', 'ktb_footer_callout' );
 
+/**
+ * Shortcode für sportarten
+ */
+function sportart_card( $atts, $content = null ) {
+
+    $a = shortcode_atts( array(
+        'farbe' => 'color',
+        'link'  => '#',
+	), $atts );
+
+    ob_start(); ?>
+<a href="<?php echo get_permalink( get_page_by_title( $a['link'] )); ?>">
+    <div class="card card-block d-flex sport-container my-3 mx-3"
+        style="background-color: <?php echo esc_attr($a['farbe']); ?>;">
+        <div class="card-body w-100 align-items-center d-flex justify-content-center">
+            <h4 class="card-title word-wrap text-center"> <?php echo $content ?> </h4>
+        </div>
+    </div>
+</a>
+<?php $my_var = ob_get_clean(); 
+	return $my_var;
+}
+add_shortcode( 'neue_sportart', 'sportart_card' );
 
 
+/**
+ * more tag spezialisiert filter
+ */
+
+function modify_read_more_link() {
+    return '<a href="' . get_permalink() . '"> [weiterlesen]</a>';
+}
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
+
+
+function new_excerpt_more($more) {
+    global $post;
+    return '<a href="'. get_permalink($post->ID) . '"> [weiterlesen]</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

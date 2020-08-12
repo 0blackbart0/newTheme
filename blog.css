@@ -25,6 +25,13 @@ h6, .h6 {
   color: #333;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
+h4 a {
+  color: black;
+}
 
 /*
   * Header
@@ -147,7 +154,6 @@ right: 100px;
 */
 
 .sport-container{
-  background-color: lightblue;
   width: 18rem;
   height: 18rem;
   box-sizing: border-box;
@@ -157,6 +163,13 @@ right: 100px;
   justify-content: center;
 }
 
+.sport-container:hover{
+  opacity: 0.75;
+  border: 1px solid rgba(0,0,0,.25);
+  -webkit-box-shadow: -16px 24px 66px -44px rgba(0,0,0,0.75);
+  -moz-box-shadow: -16px 24px 66px -44px rgba(0,0,0,0.75);
+  box-shadow: -16px 24px 66px -44px rgba(0,0,0,0.75);
+}
 .word-wrap{
   word-wrap: break-word;
   width: 100%;

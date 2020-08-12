@@ -1,14 +1,9 @@
 
 
-<div class="">
-    <h4 class=""> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-    <p class=""> <?php the_date(); ?> by <a href="#"> <?php the_author() ?> </a></p>
+<div >
+    <h4 > <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+    <p > <?php the_date(); ?> by <?php the_author() ?></p>
 
-    <?php if (is_page()) :
-            the_content();
-        else:
-            the_excerpt(); 
-        endif;
-        ?>
+    <?php the_excerpt(); ?>
 
-</div><!-- /.blog-post -->
+</div>

@@ -22,13 +22,17 @@ function addStyleSheets() {
 add_action( 'wp_enqueue_scripts', 'addStyleSheets');
 
 /**
- * Register Custom Navigation Walker
+ * Register Custom Walker
  */
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
 
+function register_subpages_walker(){
+	require_once get_template_directory() . '/class-wp-subpages-walker.php';
+}
+add_action( 'after_setup_theme', 'register_subpages_walker' );
 
 /**
  * remove Customizations
@@ -36,7 +40,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 
 function remove_front_page_settings( $wp_customize )
 {
-    $wp_customize->remove_section( 'static_front_page' );
+    //$wp_customize->remove_section( 'static_front_page' );
     $wp_customize->remove_section( 'title_tagline' );
     $wp_customize->remove_section( 'custom_css' );
 }
@@ -277,3 +281,56 @@ function new_excerpt_more($more) {
     return '<a href="'. get_permalink($post->ID) . '"> [weiterlesen]</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+/**
+ * Menu für Sportartseite
+ */
+
+/* function wpb_list_child_pages() { 
+ 
+    global $post; 
+     
+    if ( is_page() && $post->post_parent )
+     
+        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+    else
+        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+     
+    if ( $childpages ) {
+     
+        $string = '<ul>' . $childpages . '</ul>';
+    }
+     
+    return $string;
+     
+    }
+     
+    add_shortcode('wpb_childpages', 'wpb_list_child_pages'); */
+
+    function wpb_list_child_pages() { 
+ 
+        global $post; 
+         
+        if ( is_page() && $post->post_parent ) {
+            
+        }
+         
+            $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+         
+        if ( $childpages ) {
+         
+            $string = '<ul>' . $childpages . '</ul>';
+        }
+         
+        return $string;
+         
+        }
+         
+        add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+
+
+        /**
+         * Walker class
+         */
+

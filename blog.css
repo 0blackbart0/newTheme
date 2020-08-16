@@ -177,6 +177,27 @@ right: 100px;
 
 
 /*
+* Sportart
+*/
+
+.submenu {
+  list-style: none;
+}
+
+.submenu li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: rgba(0,0,0,.5);
+}
+
+.submenu li a:hover {
+  color: rgba(0,0,0,.7);
+}
+/*
 * Footer
 */
 
@@ -213,3 +234,6 @@ right: 100px;
   height: 100%;
   width: 100%;
  }
+
+
+

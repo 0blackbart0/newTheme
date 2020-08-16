@@ -6,23 +6,25 @@
 <?php   get_header(); ?>
 <div class="container-fluid my-3">
     <div class="row justify-content-end">
-        <div class="col d-flex flex-row-reverse">
-            <?php
-            $args = array(
-                'title_li' => '',
-                'child_of' => $post->ID,
-                'echo' => 0,
-                'walker' => new Subpage_Walker(),
-            );
-                $children = wp_list_pages( $args );
-                if ( $children) : ?>
-                <ul class="list-group list-group-horizontal-sm submenu">
-                    <li><a href="<?php echo the_permalink();?>"> <?php the_title(); ?> </a></li> 
-                    <?php echo $children; ?>
-                </ul>
-                <?php endif; ?>
+    
+        <?php
+        $args = array(
+            'title_li' => '',
+            'child_of' => $post->ID,
+            'echo' => 0,
+            'walker' => new Subpage_Walker(),
+        );
+            $children = wp_list_pages( $args );
+            if ( $children) : ?>
+            
+                <div class="col-md-auto text-center">
+                    <a class="subpage-link" href="<?php echo the_permalink();?>"> <?php the_title(); ?></a>
+                </div>
+                <?php echo $children; ?>
+            
+            <?php endif; ?>
 
-        </div>
+      
     </div>
 </div>
 

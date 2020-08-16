@@ -180,21 +180,12 @@ right: 100px;
 * Sportart
 */
 
-.submenu {
-  list-style: none;
-}
-
-.submenu li {
-  display: inline;
-  margin: 0 10px;
-}
-
-.submenu li a {
+.subpage-link {
   text-decoration: none;
   color: rgba(0,0,0,.5);
 }
 
-.submenu li a:hover {
+.subpage-link:hover {
   color: rgba(0,0,0,.7);
 }
 /*

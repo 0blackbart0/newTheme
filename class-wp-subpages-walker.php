@@ -178,8 +178,7 @@ class Subpage_Walker extends Walker_Page {
 	 }
 
 	 $output .= $indent . sprintf(
-		 '<li%s><a%s>%s%s%s</a>',
-		 $css_classes,
+		 '<div class="col-md-auto text-center"><a class="subpage-link"%s>%s%s%s</a>',
 		 $attributes,
 		 $args['link_before'],
 		 /** This filter is documented in wp-includes/post-template.php */
@@ -219,7 +218,7 @@ class Subpage_Walker extends Walker_Page {
 		 $t = '';
 		 $n = '';
 	 }
-	 $output .= "</li>{$n}";
+	 $output .= "</div>{$n}";
  }
 
 }

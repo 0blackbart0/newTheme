@@ -14,7 +14,7 @@ function console_log( $data ){
 function addStyleSheets() {
     wp_enqueue_style( 'style', get_stylesheet_uri());
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' );
-    wp_enqueue_style( 'blog', get_template_directory_uri()."/blog.css", false );
+  //  wp_enqueue_style( 'blog', get_template_directory_uri()."/blog.css", false );
     wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js' );
     wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' );
     wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' );
@@ -60,7 +60,7 @@ function the_textarea_value( $textarea ){
     function ktb_anstehende_termine_callout($wp_customize) {
         $wp_customize->add_section('ktb_anstehende_termine_callout-section', array(
             'title' => 'Anstehende Termine/ Ausfälle',
-            'priority'   => 0,
+            'priority'   => 5,
         ));
 
         $wp_customize->add_setting('ktb_anstehende_termine_callout_termine');
@@ -95,11 +95,68 @@ add_action( 'customize_register', 'ktb_anstehende_termine_callout' );
 /**
  * Menu options
  */
+function register_menus(){
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu'),
+        'footer' => __( 'Footer Menu'),
+        'verein' => __( 'Vereins Menu'),
+    ) );
+}
 
-register_nav_menus( array(
-    'primary' => __( 'Primary Menu'),
-    'footer' => __( 'Footer Menu'),
+
+add_action( 'init', 'register_menus' );
+
+/**
+ * Header Section
+ */
+
+ function ktb_header_callout($wp_customize) {
+    $wp_customize->add_section('ktb-header-section', array(
+        'title' => 'Header',
+        'priority' => 0,
+    ));
+
+
+    
+    $wp_customize->add_setting( 'ktb-display-header',
+    array(
+       'default' => 0,
+    )
+ );
+  
+ $wp_customize->add_control( 'ktb-display-header',
+    array(
+       'label' => 'Video im Header anzeigen?' ,
+       'section'  => 'ktb-header-section',
+       'type'=> 'checkbox',
+    )
+ );
+
+
+
+
+    $wp_customize->add_setting( 'ktb-header-video',
+   array(
+      'default' => '',
+      'transport' => 'refresh',
+      'sanitize_callback' => 'absint',
+             'type' => 'theme_mod',
+   )
+);
+
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'ktb-header-video',
+   array(
+      'label' => __( 'Header Video' ),
+      'description' => esc_html__( 'This is the description for the Media Control' ),
+      'section' => 'ktb-header-section',
+      'mime_type' => 'video',  // Required. Can be image, audio, video, application, text
+   )
 ) );
+
+
+ }
+
+ add_action( 'customize_register', 'ktb_header_callout' );
 
 /**
  * Footer Partner callout section
@@ -287,26 +344,6 @@ add_filter('excerpt_more', 'new_excerpt_more');
  * Menu für Sportartseite
  */
 
-/* function wpb_list_child_pages() { 
- 
-    global $post; 
-     
-    if ( is_page() && $post->post_parent )
-     
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
-    else
-        $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
-     
-    if ( $childpages ) {
-     
-        $string = '<ul>' . $childpages . '</ul>';
-    }
-     
-    return $string;
-     
-    }
-     
-    add_shortcode('wpb_childpages', 'wpb_list_child_pages'); */
 
     function wpb_list_child_pages() { 
  
@@ -329,8 +366,4 @@ add_filter('excerpt_more', 'new_excerpt_more');
          
         add_shortcode('wpb_childpages', 'wpb_list_child_pages');
 
-
-        /**
-         * Walker class
-         */
-
+        

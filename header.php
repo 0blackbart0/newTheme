@@ -18,10 +18,18 @@
 </head>
 
 <body>
-
-
-
-    <nav class="navbar navbar-expand-lg navbar-light blog-masthead">
+    <?php if(is_front_page() && get_theme_mod('ktb-display-header') && get_theme_mod( 'ktb-header-video' )): ?>
+    <div class="container-fluid d-none d-md-block px-0 py-0 mx-0 my-0 video-container ">
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-header-video')) ?>" type="video/mp4">
+        </video>
+        <div class="overlay d-none d-lg-block text-center align-items-center ">
+            <a href="#navbar"><img src="<?php echo get_bloginfo( 'template_directory' ) ?>/images/scroll_down.png"
+                    alt=""></a>
+        </div>
+    </div>
+    <?php endif; ?>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light blog-masthead">
 
         <a href="<?php echo get_home_url() ?>" class="navbar-brand">
             <img id="KTBlogo" src="<?php echo get_bloginfo('template_directory'); ?> /images/KTB_Logo_Groß.png">

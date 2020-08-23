@@ -1,6 +1,6 @@
 <?php 
 /* 
- *   Template Name: Sportart
+ *   Template Name: Sportart Unterseite
  * */ ?>
 
 <?php   get_header(); ?>
@@ -10,7 +10,7 @@
         <?php
         $args = array(
             'title_li' => '',
-            'child_of' => $post->ID,
+            'child_of' => $post->post_parent,
             'echo' => 0,
             'walker' => new Subpage_Walker(),
         );
@@ -18,7 +18,7 @@
             if ( $children) : ?>
             
                 <div class="col-md-auto text-center">
-                    <a class="subpage-link" href="<?php echo the_permalink();?>"> <?php the_title(); ?></a>
+                    <a class="subpage-link" href="<?php echo get_permalink($post->post_parent);?>"> <?php echo get_the_title($post->post_parent); ?></a>
                 </div>
                 <?php echo $children; ?>
             

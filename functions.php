@@ -14,7 +14,6 @@ function console_log( $data ){
 function addStyleSheets() {
     wp_enqueue_style( 'style', get_stylesheet_uri());
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' );
-  //  wp_enqueue_style( 'blog', get_template_directory_uri()."/blog.css", false );
     wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js' );
     wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' );
     wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' );
@@ -40,7 +39,7 @@ add_action( 'after_setup_theme', 'register_subpages_walker' );
 
 function remove_front_page_settings( $wp_customize )
 {
-    //$wp_customize->remove_section( 'static_front_page' );
+    $wp_customize->remove_section( 'static_front_page' );
     $wp_customize->remove_section( 'title_tagline' );
     $wp_customize->remove_section( 'custom_css' );
 }
@@ -60,7 +59,7 @@ function the_textarea_value( $textarea ){
     function ktb_anstehende_termine_callout($wp_customize) {
         $wp_customize->add_section('ktb_anstehende_termine_callout-section', array(
             'title' => 'Anstehende Termine/ Ausfälle',
-            'priority'   => 5,
+            'priority'   => 7,
         ));
 
         $wp_customize->add_setting('ktb_anstehende_termine_callout_termine');
@@ -157,6 +156,97 @@ add_action( 'init', 'register_menus' );
  }
 
  add_action( 'customize_register', 'ktb_header_callout' );
+
+
+ /**
+  * Index Slider callout section
+  */
+
+  function ktb_index_slider_callout($wp_customize) {
+
+    $wp_customize->add_section('ktb_slider_section', array(
+        'title' => 'Slider Startseite',
+        'priority' => 5,
+    ));
+
+
+
+    $wp_customize->add_setting('ktb-slider-image0');
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
+        $wp_customize, 'ktb-slider-image-control0', array(
+            'label' => 'Bild 1 im Slider',
+            'flex_width'        => false, 
+            'flex_height'       => false,
+            'width'             => 300,
+            'height'            => 300,
+            'section' => 'ktb_slider_section',
+            'settings' => 'ktb-slider-image0',
+        )
+        ));
+        
+        
+    $wp_customize->add_setting('ktb-slider-image1');
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
+        $wp_customize, 'ktb-slider-image-control1', array(
+            'label' => 'Bild 2 im Slider',
+            'flex_width'        => false, 
+            'flex_height'       => false,
+            'width'             => 300,
+            'height'            => 300,
+            'section' => 'ktb_slider_section',
+            'settings' => 'ktb-slider-image1',
+        )
+        ));
+
+
+    $wp_customize->add_setting('ktb-slider-image2');
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
+        $wp_customize, 'ktb-slider-image-control2', array(
+            'label' => 'Bild 3 im Slider',
+            'flex_width'        => false, 
+            'flex_height'       => false,
+            'width'             => 300,
+            'height'            => 300,
+            'section' => 'ktb_slider_section',
+            'settings' => 'ktb-slider-image2',
+        )
+        ));
+
+        $wp_customize->add_setting('ktb-slider-image3');
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
+        $wp_customize, 'ktb-slider-image-control3', array(
+            'label' => 'Bild 4 im Slider',
+            'flex_width'        => false, 
+            'flex_height'       => false,
+            'width'             => 300,
+            'height'            => 300,
+            'section' => 'ktb_slider_section',
+            'settings' => 'ktb-slider-image3',
+        )
+        ));
+
+        $wp_customize->add_setting('ktb-slider-image4');
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
+        $wp_customize, 'ktb-slider-image-control4', array(
+            'label' => 'Bild 5 im Slider',
+            'flex_width'        => false, 
+            'flex_height'       => false,
+            'width'             => 300,
+            'height'            => 300,
+            'section' => 'ktb_slider_section',
+            'settings' => 'ktb-slider-image4',
+        )
+        ));
+
+
+  }
+
+  add_action( 'customize_register', 'ktb_index_slider_callout' );
 
 /**
  * Footer Partner callout section

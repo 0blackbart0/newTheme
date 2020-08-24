@@ -52,26 +52,6 @@
             'walker'            => new WP_Bootstrap_Navwalker(),
         ) );
         ?>
-        <!--
-        <div class="collapse navbar-collapse" id="navbarMenu">
-
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item ml-5">
-                    <a class="nav-link" href="<?php  ?>">Sportarten</a>
-                </li>
-                <li class="nav-item ml-5">
-                    <a class="nav-link" href="#">Aktuelles</a>
-                </li>
-                <li class="nav-item ml-5">
-                    <a class="nav-link" href="#">Mitglied werden</a>
-                </li>
-                <li class="nav-item ml-5">
-                    <a class="nav-link" href="#">Verein</a>
-                </li>
-            </ul>
-
-        </div>
-        -->
     </nav>
     <div class="container-fluid headerSeperator">
         <div class="row">

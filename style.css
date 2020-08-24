@@ -1,9 +1,9 @@
 /*
 Theme Name: Kieler Turnerbund Brunswik von 1899 e.V.
 Author: Jannek Hornung
-Description: Kieler Turnerbund Brunswik
+Description: Ein extra für den Kieler Turnerbund Brunswik von 1899 e.V. erstelltes Theme. Die Meisten Seiten sind durch direkte Templates vordefiniert (bsp.: Verein / Sportarten / aktuelles / etc.). Außerdem sollte sich das Theme dem Endgerät entsprechend verhalten und somit full Responsive sein.
 Version: 0.0.1
-Tags: bootstrap
+Tags: bootstrap, responsive, Gemeinsam Bewegen
 */
 
 /*
@@ -142,22 +142,10 @@ html {
   }
   
   
-  /* Sidebar modules for boxing content */
-  .sidebar-module {
-    padding: 15px;
-    margin: 0 -15px 15px;
+  .slider .carousel-item img {
+    height:150px; 
+    margin:auto;
   }
-  .sidebar-module-inset {
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-  }
-  .sidebar-module-inset p:last-child,
-  .sidebar-module-inset ul:last-child,
-  .sidebar-module-inset ol:last-child {
-    margin-bottom: 0;
-  }
-  
   /**
   * Sportarten
   */

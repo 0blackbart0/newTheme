@@ -9,7 +9,7 @@ Tags: bootstrap, responsive, Gemeinsam Bewegen
 /*
 * Globals
 */
-html {
+/* html {
     scroll-behavior: smooth;
     max-width: 100%;
     overflow-x: hidden;
@@ -21,7 +21,7 @@ html {
     max-width: 100%;
     overflow-x: hidden;
     
-  }
+  } */
   
   h1, .h1,
   h2, .h2,
@@ -141,11 +141,7 @@ html {
     height: 20px;
   }
   
-  
-  .slider .carousel-item img {
-    height:150px; 
-    margin:auto;
-  }
+
   /**
   * Sportarten
   */
@@ -225,5 +221,20 @@ html {
    }
   
   
-  
-  
+  /*
+  * content
+  */
+
+  .social-links .fa-telegram {
+    color: #139bd0;
+  }
+  .social-links .fa-whatsapp {
+    color:  #25d366;
+  }
+  .social-links .fa-facebook {
+    color: #4867aa;
+  }
+  .social-links .fa-envelope {
+    color: #ffd800;
+  }
+

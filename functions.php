@@ -17,6 +17,9 @@ function addStyleSheets() {
     wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js' );
     wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' );
     wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' );
+    wp_enqueue_script( 'fontawsome', 'https://kit.fontawesome.com/f15d66abf7.js' );
+    
+   
 }
 add_action( 'wp_enqueue_scripts', 'addStyleSheets');
 
@@ -456,4 +459,4 @@ add_filter('excerpt_more', 'new_excerpt_more');
          
         add_shortcode('wpb_childpages', 'wpb_list_child_pages');
 
-        
+        //$P$BalKBrdB2ycQms8a.g.vBOIx2ENcqS/

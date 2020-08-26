@@ -458,5 +458,3 @@ add_filter('excerpt_more', 'new_excerpt_more');
         }
          
         add_shortcode('wpb_childpages', 'wpb_list_child_pages');
-
-        //$P$BalKBrdB2ycQms8a.g.vBOIx2ENcqS/

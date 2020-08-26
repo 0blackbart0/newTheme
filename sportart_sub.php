@@ -10,6 +10,7 @@
         <?php
         $args = array(
             'title_li' => '',
+            'depth'        => 1,
             'child_of' => $post->post_parent,
             'echo' => 0,
             'walker' => new Subpage_Walker(),

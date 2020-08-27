@@ -1,6 +1,6 @@
 <?php   get_header(); ?>
 
-<div class="container my-5">
+<div class="container my-3">
 
     <div class="row justify-content-center my-5">
         <div class="col">
@@ -61,24 +61,30 @@
             </div>
         </div>
     </div>
-
-    <div class="row justify-content-center">
-        <span>Neuigkeiten</span>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center mb-3">
+        <div class="col-10 text-center">
+            <span>Neuigkeiten</span>
+            <hr>
+        </div>
     </div>
 
-    <hr>
-    <div class="row justify-content-around">
-        <!-- <div class="col-sm-8 "> -->
-            <?php
+
+    <div class="row justify-content-center">
+
+        <?php
             if (have_posts()) : while ( have_posts(  )) : the_post();
                 get_template_part( 'content', get_post_format() );
             endwhile; ?>
-            <?php endif; ?>
-        <!-- </div> -->
+        <?php endif; ?>
+
 
 
     </div>
+
 </div>
+
 
 
 <?php get_footer(); ?>

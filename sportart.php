@@ -6,7 +6,17 @@
 <?php   get_header(); ?>
 <div class="container-fluid my-3">
     <div class="row justify-content-end mr-3">
-    
+
+        <?php
+            $parent_id = wp_get_post_parent_id( $post );
+            if(get_the_title($parent_id) != 'Sportarten'):
+        ?>
+        <div class="col-md-auto text-center">
+            <a class="subpage-link" href="<?php echo get_permalink($parent_id);?>"> <?php echo get_the_title($parent_id); ?>  |</a>
+        </div>
+
+        <?php endif;?>
+
         <?php
         $args = array(
             'title_li' => '',
@@ -17,15 +27,15 @@
         );
             $children = wp_list_pages( $args );
             if ( $children) : ?>
-            
-                <div class="col-md-auto text-center">
-                    <a class="subpage-link" href="<?php echo the_permalink();?>"> <?php the_title(); ?></a>
-                </div>
-                <?php echo $children; ?>
-            
-            <?php endif; ?>
 
-      
+        <div class="col-md-auto text-center">
+            <a class="subpage-link" href="<?php echo the_permalink();?>"> <?php the_title(); ?></a>
+        </div>
+        <?php echo $children; ?>
+
+        <?php endif; ?>
+
+
     </div>
 </div>
 

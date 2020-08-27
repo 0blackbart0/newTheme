@@ -1,16 +1,16 @@
-<div class="card bg-light col-lg-3 col-md-5 col-sm-11 m-1">
+<div class="card col-lg-3 col-md-5 col-sm-11 m-1 my-card" >
     <div class="row card-header">
         <h4> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
     </div>
 
-    <div class="card-body">
+    <div class="card-body" >
 
         <h6 class="card-subtitle mb-2 text-muted"><?php the_date(); ?> <?php the_author() ?></h6>
 
-        <p class="card-text"><?php the_excerpt(); ?></p>
+        <p class="card-text" id="card"><?php the_excerpt(); ?></p>
     </div>
 
-    <div class="row mt-auto social-links card-footer" id="card-footer">
+    <div class="row mt-auto social-links card-footer my-card-footer">
         <div class="col">
 
             <a href="https://api.whatsapp.com/send?text=<?php the_permalink() ?>  <?php the_title() ?>"><i

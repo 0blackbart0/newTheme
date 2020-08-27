@@ -13,7 +13,7 @@
         <?php
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         $query = new WP_Query( array(
-        'posts_per_page' => 6,
+        'posts_per_page' => 10,
         'paged' => $paged
         ));
         ?>
@@ -23,7 +23,7 @@
         <!-- begin loop -->
         <?php while ( $query->have_posts() ) : $query->the_post(); 
 
-        get_template_part( 'content', get_post_format() );
+        get_template_part( 'content-card-vertical', get_post_format() );
 
         endwhile; ?>
         <!-- end loop -->
@@ -62,7 +62,7 @@
                                 $page = str_replace('class="next page-numbers"', 'class="page-link"', $page );
                                 $page = str_replace('class="prev page-numbers"', 'class="page-link"', $page );
                                 
-                                if (strpos($page, 'dots') === false){
+                                if (strpos($page, 'dots') === false){   
                                     if(strpos($page, 'current') !== false ){
                                        echo '<li class="page-item active"><a class="page-link" href="">' . $page . '</a></li>';
                                     }

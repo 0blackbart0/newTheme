@@ -239,10 +239,15 @@ Tags: bootstrap, responsive, Gemeinsam Bewegen
   * content
   */
 
-  #card-footer{
-    border: none;
-    background-color: #f8f9fa;
-
+  #card-header{
+    background-color: rgba(121, 201, 213, 0.5);
+  }
+  .my-card{
+    background-color: rgba(121, 201, 213, 0.25) !important;
+  }
+  .my-card-footer{
+    border: none !important;
+    background-color: transparent !important; 
   }
 
   .social-links .fa-telegram {

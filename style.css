@@ -13,14 +13,16 @@ Tags: bootstrap, responsive, Gemeinsam Bewegen
     scroll-behavior: smooth;
     max-width: 100%;
     overflow-x: hidden;
+    height: 100%;
   }
   
   body {
     font-family: Georgia, "Times New Roman", Times, serif;
-    color: #555;
     max-width: 100%;
     overflow-x: hidden;
-    
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
   } 
   
   h1, .h1,
@@ -40,6 +42,11 @@ Tags: bootstrap, responsive, Gemeinsam Bewegen
   
   h4 a {
     color: black;
+  }
+
+  h4 a:hover {
+    text-decoration: none;
+    color: rgba(0,0,0,0.5)
   }
   
   /*
@@ -169,9 +176,9 @@ Tags: bootstrap, responsive, Gemeinsam Bewegen
   }
   
   
-  /*
-  * Sportart
-  */
+/*
+* Subpages
+*/
   
   .subpage-link {
     text-decoration: none;
@@ -181,49 +188,62 @@ Tags: bootstrap, responsive, Gemeinsam Bewegen
   .subpage-link:hover {
     color: rgba(0,0,0,.7);
   }
-  /*
-  * Footer
-  */
+
+/*
+* Footer
+*/
+
+
+
+  .footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .footer-bottom {
+    background-color: rgba(121, 201, 213, 0.25);
+  }
+
+  .menu-footer-menu-container {
+    display: table; 
+    margin: 0 auto;
+    padding: 2vh;
+  }
+
+  .footer-menu{
+    list-style: none;
+  }
   
+  .footer-menu .menu-item{
+    display: inline;
+    margin: 0 10px;
+  }
   
-    .footer-bottom {
-      background-color: rgba(121, 201, 213, 0.25);
-    }
+  .footer-menu .menu-item a {
+    text-decoration: none;
+    color: rgba(0,0,0,.5);
+  }
   
-    .menu-footer-menu-container {
-      display: table; 
-      margin: 0 auto;
-      padding: 2vh;
-    }
-  
-    .footer-menu{
-      list-style: none;
-    }
-    
-    .footer-menu .menu-item{
-      display: inline;
-      margin: 0 10px;
-    }
-    
-    .footer-menu .menu-item a {
-      text-decoration: none;
-      color: rgba(0,0,0,.5);
-    }
-    
-    .footer-menu .menu-item a:hover { 
-      color: rgba(0,0,0,.7);
-    }
-  
-   .img-footer {
-    object-fit: contain;
-    height: 100%;
-    width: 100%;
+  .footer-menu .menu-item a:hover { 
+    color: rgba(0,0,0,.7);
+  }
+
+  .img-footer {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
    }
   
   
   /*
   * content
   */
+
+  #card-footer{
+    border: none;
+    background-color: #f8f9fa;
+
+  }
 
   .social-links .fa-telegram {
     color: #139bd0;

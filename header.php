@@ -18,29 +18,30 @@
 </head>
 
 <body>
-    <?php if(is_front_page() && get_theme_mod('ktb-display-header') && get_theme_mod( 'ktb-header-video' )): ?>
-    <div class="container-fluid d-none d-md-block px-0 py-0 mx-0 my-0 video-container ">
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-header-video')) ?>" type="video/mp4">
-        </video>
-        <div class="overlay d-none d-lg-block text-center align-items-center ">
-            <a href="#navbar"><img src="<?php echo get_bloginfo( 'template_directory' ) ?>/images/scroll_down.png"
-                    alt=""></a>
+    <div class="content">
+        <?php if(is_front_page() && get_theme_mod('ktb-display-header') && get_theme_mod( 'ktb-header-video' )): ?>
+        <div class="container-fluid d-none d-md-block px-0 py-0 mx-0 my-0 video-container ">
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-header-video')) ?>" type="video/mp4">
+            </video>
+            <div class="overlay d-none d-lg-block text-center align-items-center ">
+                <a href="#navbar"><img src="<?php echo get_bloginfo( 'template_directory' ) ?>/images/scroll_down.png"
+                        alt=""></a>
+            </div>
         </div>
-    </div>
-    <?php endif; ?>
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light blog-masthead">
+        <?php endif; ?>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light blog-masthead">
 
-        <a href="<?php echo get_home_url() ?>" class="navbar-brand">
-            <img id="KTBlogo" src="<?php echo get_bloginfo('template_directory'); ?> /images/KTB_Logo_Groß.png">
-        </a>
+            <a href="<?php echo get_home_url() ?>" class="navbar-brand">
+                <img id="KTBlogo" src="<?php echo get_bloginfo('template_directory'); ?> /images/KTB_Logo_Groß.png">
+            </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
 
-        <?php
+            <?php
         wp_nav_menu( array(
             'theme_location'    => 'primary',
             'depth'             => 2,
@@ -52,20 +53,20 @@
             'walker'            => new WP_Bootstrap_Navwalker(),
         ) );
         ?>
-    </nav>
-    <div class="container-fluid headerSeperator">
-        <div class="row">
-            <div class="col c1"> </div>
-            <div class="col c2"> </div>
-            <div class="col c3"> </div>
-            <div class="col c4"> </div>
-            <div class="col c5"> </div>
-            <div class="col c6"> </div>
-            <div class="col c7"> </div>
-            <div class="col c8"> </div>
-            <div class="col c9 d-none d-lg-block"> </div>
-            <div class="col c10 d-none d-lg-block"> </div>
-            <div class="col c11 d-none d-lg-block"> </div>
-            <div class="col c12 d-none d-lg-block"> </div>
+        </nav>
+        <div class="container-fluid headerSeperator">
+            <div class="row">
+                <div class="col c1"> </div>
+                <div class="col c2"> </div>
+                <div class="col c3"> </div>
+                <div class="col c4"> </div>
+                <div class="col c5"> </div>
+                <div class="col c6"> </div>
+                <div class="col c7"> </div>
+                <div class="col c8"> </div>
+                <div class="col c9 d-none d-lg-block"> </div>
+                <div class="col c10 d-none d-lg-block"> </div>
+                <div class="col c11 d-none d-lg-block"> </div>
+                <div class="col c12 d-none d-lg-block"> </div>
+            </div>
         </div>
-    </div>

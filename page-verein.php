@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center mx-1">
     <div class="col-sm-8">
         <?php
         if (have_posts()) : while ( have_posts(  )) : the_post();

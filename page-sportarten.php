@@ -3,8 +3,12 @@
     <div class="col-sm-10 ">
         <div class="row justify-content-center">
             <?php
+            $tags = array(
+                '<p>',
+                '</p>',
+            );
             if (have_posts()) : while ( have_posts(  )) : the_post();
-                   the_content();                
+                   echo do_shortcode(str_replace($tags, '', get_the_content()));                
             endwhile; endif;
             ?>
         </div>

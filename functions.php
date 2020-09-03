@@ -23,6 +23,7 @@ function addStyleSheets() {
 }
 add_action( 'wp_enqueue_scripts', 'addStyleSheets');
 
+
 /**
  * Register Custom Walker
  */
@@ -250,6 +251,7 @@ add_action( 'init', 'register_menus' );
   }
 
   add_action( 'customize_register', 'ktb_index_slider_callout' );
+
 
 /**
  * Footer Partner callout section

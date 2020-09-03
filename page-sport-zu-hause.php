@@ -1,7 +1,7 @@
 <?php   get_header(); ?>
-<div class="container">
-    <div class="row justify-content-center my-5">
-        <div class="col-sm-10">
+<div class="container-fluid">
+    
+   
 
 
             <?php 
@@ -16,20 +16,17 @@
                     //If its an Youtubelink
                     if(strpos($piece[1], 'https://www.youtube') !== false){
                         if($last_was_video){
-                           // $formatted .= '<div class="col">'. $piece[1] .'</div>';
-                           $formatted .= '<div class="embed-responsive embed-responsive-16by9">
-                           <object data="'.$piece[1].'"></object>
-                         </div>';
+                           $formatted .= '<div class="col-8 col-sm-6 col-md-4 col-lg-3">' . wp_oembed_get( $piece[1] ) . '</div>';
                         }else {
-                            $formatted .= '<div class="row"> <div class="col"><object data="'.$piece[1].'"></object></div>';
+                            $formatted .= '<div class="row"> <div class="col-8 col-sm-6 col-md-4 col-lg-3">' . wp_oembed_get( $piece[1] ) . '</div>';
                         }
                         $last_was_video = true;
                     //If its something else like a Header or Paragraph
                     }else{
                         if($last_was_video){
-                            $formatted .= '</div>' . $piece[0];
+                            $formatted .= '</div><div class="row">' . $piece[0] . '</div>';
                         }else{
-                            $formatted .= $piece[0];
+                            $formatted .= '<div class="row">' . $piece[0] . '</div>';
                         }
                         $last_was_video = false;
                     }
@@ -37,23 +34,23 @@
                 }
 
             ?>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center my-3">
                 <div class="col text-center">
                     <h3><?php the_title() ?></h3>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col">
+            <div class="row">
+                <div class="col-10">
                     <?php 
-                    console_log($formatted);
-                echo $formatted;
+
+                    echo $formatted;
                 endwhile; endif;?>
                 </div>
             </div>
 
 
-        </div>
-    </div>
+        
+    
 </div>
 
 

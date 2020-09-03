@@ -2,8 +2,9 @@
 
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-sm-8">
-            <form class="justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <form class="justify-content-center" action="#" method="post">
+                <h4>Anschrift:</h4>
                 <div class="form-row">
                     <div class="form-group col-sm-6">
                         <label for="vorname">Vorname:</label>
@@ -42,7 +43,8 @@
                 <div class="form-row">
                     <div class="form-group col-4">
                         <label for="postleitzahl">Postleitzahl:</label>
-                        <input id="postleitzahl" class="form-control" type="number" name="postleitzahl">
+                        <input id="postleitzahl" class="form-control" type="text" name="postleitzahl"
+                            pattern="[0-9]{5}">
                     </div>
                     <div class="form-group col-8">
                         <label for="ort">Ort:</label>
@@ -50,63 +52,46 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group col-sm-5">
                         <label for="telefon">Telefonnummer:</label>
                         <input id="telefon" class="form-control" type="tel" name="telefon">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-7">
                         <label for="email">Email:</label>
                         <input id="email" class="form-control" type="email" name="email">
                     </div>
                 </div>
+
                 <hr>
+
+                <h4>Kontodaten:</h4>
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group col-8">
                         <label for="kontoinhaber">Kontoinhaber:</label>
                         <input id="kontoinhaber" class="form-control" type="text" name="kontoinhaber">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group col-8">
                         <label for="kreditinstitut">Kredidinstitut:</label>
                         <input id="kreditinstitut" class="form-control" type="text" name="kreditinstitut">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group col-sm-4">
                         <label for="bic">BIC:</label>
                         <input id="bic" class="form-control" type="text" name="bic">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-sm-8">
                         <label for="iban">Iban:</label>
                         <input id="iban" class="form-control" type="text" name="iban">
                     </div>
                 </div>
+                <button class="btn btn-primary" type="submit">Abschicken</button>
             </form>
         </div>
     </div>
 </div>
 
-
-
-<p>test</p>
-
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
 
 <?php get_footer(); ?>

@@ -1,9 +1,40 @@
 <?php   get_header(); ?>
 
+<?php 
+
+$error = NULL;
+
+if(isset($_POST['submit'])){
+    $vorname = $_POST['vorname'];
+    $nachname = $_POST['nachname'];
+    $geburtsdatum = $_POST['geburtsdatum'];
+    $geschlecht = $_POST['geschlecht'];
+    $strasse = $_POST['strasse'];
+    $hausnummer = $_POST['hausnummer'];
+    $postleitzahl = $_POST['postleitzahl'];
+    $ort = $_POST['ort'];
+    $telefon = $_POST['telefon'];
+    $email = $_POST['email'];
+    $kontoinhaber = $_POST['kontoinhaber'];
+    $kreditinstitut = $_POST['kreditinstitut'];
+    $bic = $_POST['bic'];
+    $iban = $_POST['iban'];
+
+    $message = 'Name: ' . $vorname .' ' . $nachname. "\ngeboren am:" . $geburtsdatum . "\ngeschlecht: " . $geschlecht . "\n Wohnort: " . $strasse . ' ' . $hausnummer . "\n" . $postleitzahl . ' ' .$ort;
+
+
+    console_log('ok');
+
+    mail($email, 'test betreff', $message, 'From: ktb.test@yahoo.com');
+
+}
+
+?>
+
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8">
-            <form class="justify-content-center" action="#" method="post">
+            <form class="justify-content-center" action="" method="post">
                 <h4>Anschrift:</h4>
                 <div class="form-row">
                     <div class="form-group col-sm-6">
@@ -87,7 +118,7 @@
                         <input id="iban" class="form-control" type="text" name="iban">
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Abschicken</button>
+                <button class="btn btn-primary" type="submit" name="submit">Abschicken</button>
             </form>
         </div>
     </div>

@@ -9,11 +9,7 @@
     </div>
 
     <div class="row my-5 justify-content-around">
-        <div class="col-sm-4 my-3">
-            <p class="text-center">Anstehende termine:</p>
-            <hr>
-            <div><?php echo the_textarea_value(get_theme_mod('ktb_anstehende_termine_callout_termine')); ?></div>
-        </div>
+        <?php dynamic_sidebar( 'termine' ); ?>
         <div class="col-sm-4 col-md-4 my-3">
 
             <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -54,12 +50,8 @@
 
 
         </div>
-        <div class="col-sm-4 my-3">
-            <p class="text-center">Trainingsausfälle:</p>
-            <hr>
-            <div><?php echo the_textarea_value(get_theme_mod('ktb_anstehende_termine_callout_trainingsausfaelle')); ?>
-            </div>
-        </div>
+        <?php dynamic_sidebar( 'trainingsasusfealle' ); ?>
+
     </div>
 </div>
 <div class="container-fluid">

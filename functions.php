@@ -49,50 +49,31 @@ function remove_front_page_settings( $wp_customize )
 }
 add_action( 'customize_register', 'remove_front_page_settings' );
 
-
 /**
- * Anstehende Termine/ Trainingsausfälle callout section
+ * Widget init
  */
-function the_textarea_value( $textarea ){
-    $lines = explode("\n", $textarea);
-    foreach( $lines as $line ){
-      echo '<p>' . $line . '</p>';
-    }
+
+function widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Trainingsausfälle',
+		'id'            => 'trainingsasusfealle',
+		'before_widget' => '<div class="col-sm-4 my-3"><p class="text-center">Trainingsausfälle:</p><hr><div>',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '',
+		'after_title'   => '',
+    ) );
+    register_sidebar( array(
+		'name'          => 'Anstehende termine',
+		'id'            => 'termine',
+		'before_widget' => '<div class="col-sm-4 my-3"><p class="text-center">Anstehende Termine:</p><hr><div>',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+
 }
- 
-    function ktb_anstehende_termine_callout($wp_customize) {
-        $wp_customize->add_section('ktb_anstehende_termine_callout-section', array(
-            'title' => 'Anstehende Termine/ Ausfälle',
-            'priority'   => 7,
-        ));
-
-        $wp_customize->add_setting('ktb_anstehende_termine_callout_termine');
-
-        $wp_customize->add_control( new WP_Customize_Control($wp_customize, 
-        'ktb_anstehende_termine_callout_termine', array(
-            'label'          => 'Termine',
-            'section'        => 'ktb_anstehende_termine_callout-section',
-            'settings'       => 'ktb_anstehende_termine_callout_termine',
-            'type'           => 'textarea',
-            )
-        )); 
-
-
-        $wp_customize->add_setting('ktb_anstehende_termine_callout_trainingsausfaelle');
-
-        $wp_customize->add_control( new WP_Customize_Control($wp_customize, 
-        'ktb_anstehende_termine_callout_trainingsausfaelle', array(
-            'label'          => 'Trainingsausfälle',
-            'section'        => 'ktb_anstehende_termine_callout-section',
-            'settings'       => 'ktb_anstehende_termine_callout_trainingsausfaelle',
-            'type'           => 'textarea',
-            )
-        )); 
-
-    }   
-
-add_action( 'customize_register', 'ktb_anstehende_termine_callout' ); 
-
+add_action( 'widgets_init', 'widgets_init' );
 
 
 /**

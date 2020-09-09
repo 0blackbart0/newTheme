@@ -1,64 +1,14 @@
 </div>
 <div class="footer">
+    <?php if(is_active_sidebar('footer-partner' )): ?>
     <div class="container mt-4">
         <hr>
         <div class="row justify-content-center h-25">
-
-            <?php if(get_theme_mod('ktb-footer-callout-image') != null) { ?>
-            <div class="col-xs-1 col-sm-4 col-lg-2 ">
-                <a href="https://<?php echo get_theme_mod('ktb-footer-callout-link') ?>">
-                    <img class="img-footer"
-                        src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-footer-callout-image')); ?>" alt=" ">
-                </a>
-            </div>
-            <?php } ?>
-
-            <?php if(get_theme_mod('ktb-footer-callout-image2') != null) { ?>
-            <div class="col-xs-1 col-sm-4 col-lg-2 ">
-                <a href="https://<?php echo get_theme_mod('ktb-footer-callout-link2') ?>">
-                    <img class="img-footer"
-                        src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-footer-callout-image2')); ?>" alt=" ">
-                </a>
-            </div>
-            <?php } ?>
-            <?php if(get_theme_mod('ktb-footer-callout-image3') != null) { ?>
-            <div class="col-xs-1 col-sm-4 col-lg-2 ">
-                <a href="https://<?php echo get_theme_mod('ktb-footer-callout-link3') ?>">
-                    <img class="img-footer"
-                        src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-footer-callout-image3')); ?>" alt=" ">
-                </a>
-            </div>
-            <?php } ?>
-            <?php if(get_theme_mod('ktb-footer-callout-image4') != null) { ?>
-            <div class="col-xs-1 col-sm-4 col-lg-2 ">
-                <a href="https://<?php echo get_theme_mod('ktb-footer-callout-link4') ?>">
-                    <img class="img-footer"
-                        src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-footer-callout-image4')); ?>" alt=" ">
-                </a>
-            </div>
-            <?php } ?>
-            <?php if(get_theme_mod('ktb-footer-callout-image5') != null) { ?>
-            <div class="col-xs-1 col-sm-4 col-lg-2 ">
-                <a href="https://<?php echo get_theme_mod('ktb-footer-callout-link5') ?>">
-                    <img class="img-footer"
-                        src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-footer-callout-image5')); ?>" alt=" ">
-                </a>
-            </div>
-            <?php } ?>
-            <?php if(get_theme_mod('ktb-footer-callout-image6') != null) { ?>
-            <div class="col-xs-1 col-sm-4 col-lg-2 ">
-                <a href="https://<?php echo get_theme_mod('ktb-footer-callout-link6') ?>">
-                    <img class="img-footer"
-                        src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-footer-callout-image6')); ?>" alt=" ">
-                </a>
-            </div>
-            <?php } ?>
-
-
+            <?php dynamic_sidebar( 'footer-partner' ); ?>
         </div>
         <hr>
-
     </div>
+    <?php endif; ?>
 
     <div class="container-fluid headerSeperator mt-4">
         <div class="row">

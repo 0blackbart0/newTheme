@@ -237,13 +237,11 @@ Tags: bootstrap, responsive, Gemeinsam Bewegen
   .footer-menu .menu-item a:hover { 
     color: rgba(0,0,0,.7);
   }
-
-  .img-footer {
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
-   }
   
+  .image-container {
+  align-items: center;
+  flex-wrap: wrap;
+  }
   
   /*
   * content

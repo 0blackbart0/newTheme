@@ -88,6 +88,14 @@ function widgets_init() {
 		'after_widget'  => '',
 		'before_title'  => '',
 		'after_title'   => '',
+    ) );
+    register_sidebar( array(
+		'name'          => 'footer partner',
+		'id'            => 'footer-partner',
+		'before_widget' => '<div class="col-xs-1 col-sm-4 col-lg-2 text-center image-container d-block d-sm-flex">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 
 }
@@ -252,145 +260,6 @@ add_action( 'init', 'register_menus' );
   add_action( 'customize_register', 'ktb_index_slider_callout' );
 
 
-/**
- * Footer Partner callout section
- */
-
- function ktb_footer_callout($wp_customize) {
-    $wp_customize->add_section('ktb-footer-callout-section', array(
-        'title' => 'verlinkte Partner',
-    ));
-
-
-
-    $wp_customize->add_setting('ktb-footer-callout-image');
-
-    $wp_customize->add_control( new WP_Customize_Media_Control(
-        $wp_customize, 'ktb-footer-callout-image-control', array(
-            'label' => 'Bild von Partner 1',
-            'section' => 'ktb-footer-callout-section',
-            'settings' => 'ktb-footer-callout-image',
-        )
-        )); 
-
-    $wp_customize->add_setting('ktb-footer-callout-link');
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
-    'ktb-footer-callout-link', array(
-        'label'=> 'Link zu Partner 1',
-        'section' => 'ktb-footer-callout-section',
-        'settings' => 'ktb-footer-callout-link',
-        'type' => 'url'
-
-    )));
-
-    $wp_customize->add_setting('ktb-footer-callout-image2');
-
-    $wp_customize->add_control( new WP_Customize_Media_Control(
-        $wp_customize, 'ktb-footer-callout-image-control2', array(
-            'label' => 'Bild von Partner 2',
-            'section' => 'ktb-footer-callout-section',
-            'settings' => 'ktb-footer-callout-image2',
-        )
-        )); 
-
-    $wp_customize->add_setting('ktb-footer-callout-link2');
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
-    'ktb-footer-callout-link2', array(
-        'label'=> 'Link zu Partner 2',
-        'section' => 'ktb-footer-callout-section',
-        'settings' => 'ktb-footer-callout-link2',
-        'type' => 'url'
-
-    )));
-
-    $wp_customize->add_setting('ktb-footer-callout-image3');
-
-    $wp_customize->add_control( new WP_Customize_Media_Control(
-        $wp_customize, 'ktb-footer-callout-image-control3', array(
-            'label' => 'Bild von Partner 3',
-            'section' => 'ktb-footer-callout-section',
-            'settings' => 'ktb-footer-callout-image3',
-        )
-        )); 
-    
-    $wp_customize->add_setting('ktb-footer-callout-link3');
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
-    'ktb-footer-callout-link3', array(
-        'label'=> 'Link zu Partner 3',
-        'section' => 'ktb-footer-callout-section',
-        'settings' => 'ktb-footer-callout-link3',
-        'type' => 'url'
-
-    )));
-        
-    $wp_customize->add_setting('ktb-footer-callout-image4');
-
-    $wp_customize->add_control( new WP_Customize_Media_Control(
-        $wp_customize, 'ktb-footer-callout-image-control4', array(
-            'label' => 'Bild von Partner 4',
-            'section' => 'ktb-footer-callout-section',
-            'settings' => 'ktb-footer-callout-image4',
-        )
-        )); 
-
-    $wp_customize->add_setting('ktb-footer-callout-link4');
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
-    'ktb-footer-callout-link4', array(
-        'label'=> 'Link zu Partner 4',
-        'section' => 'ktb-footer-callout-section',
-        'settings' => 'ktb-footer-callout-link4',
-        'type' => 'url'
-
-    )));
-
-    $wp_customize->add_setting('ktb-footer-callout-image5');
-
-    $wp_customize->add_control( new WP_Customize_Media_Control(
-        $wp_customize, 'ktb-footer-callout-image-control5', array(
-            'label' => 'Bild von Partner 5',
-            'section' => 'ktb-footer-callout-section',
-            'settings' => 'ktb-footer-callout-image5',
-        )
-        )); 
-
-    $wp_customize->add_setting('ktb-footer-callout-link5');
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
-    'ktb-footer-callout-link5', array(
-        'label'=> 'Link zu Partner 5',
-        'section' => 'ktb-footer-callout-section',
-        'settings' => 'ktb-footer-callout-link5',
-        'type' => 'url'
-
-    )));
-    $wp_customize->add_setting('ktb-footer-callout-image6');
-
-    $wp_customize->add_control( new WP_Customize_Media_Control(
-        $wp_customize, 'ktb-footer-callout-image-control6', array(
-            'label' => 'Bild von Partner 6',
-            'section' => 'ktb-footer-callout-section',
-            'settings' => 'ktb-footer-callout-image6',
-        )
-        )); 
-
-    $wp_customize->add_setting('ktb-footer-callout-link6');
-
-    $wp_customize->add_control( new WP_Customize_Control($wp_customize,
-    'ktb-footer-callout-link6', array(
-        'label'=> 'Link zu Partner 6',
-        'section' => 'ktb-footer-callout-section',
-        'settings' => 'ktb-footer-callout-link6',
-        'type' => 'url'
-
-    )));
-    }
-  
-
-add_action( 'customize_register', 'ktb_footer_callout' );
 
 /**
  * Shortcode für sportarten

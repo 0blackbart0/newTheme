@@ -14,6 +14,8 @@ function console_log( $data ){
 function addStyleSheets() {
     wp_enqueue_style( 'style', get_stylesheet_uri());
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' );
+    wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Courgette' );
+
     wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js' );
     wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' );
     wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' );
@@ -58,16 +60,32 @@ function widgets_init() {
 	register_sidebar( array(
 		'name'          => 'Trainingsausfälle',
 		'id'            => 'trainingsasusfealle',
-		'before_widget' => '<div class="col-sm-4 my-3"><p class="text-center">Trainingsausfälle:</p><hr><div>',
-		'after_widget'  => '</div></div>',
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '',
 		'after_title'   => '',
     ) );
     register_sidebar( array(
 		'name'          => 'Anstehende termine',
 		'id'            => 'termine',
-		'before_widget' => '<div class="col-sm-4 my-3"><p class="text-center">Anstehende Termine:</p><hr><div>',
-		'after_widget'  => '</div></div>',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+    ) );
+    register_sidebar( array(
+		'name'          => 'Aktuelles sidebar',
+		'id'            => 'aktuelles-sidebar',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+    ) );
+    register_sidebar( array(
+		'name'          => 'Archive sidebar',
+		'id'            => 'archive-sidebar',
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
@@ -389,7 +407,7 @@ function sportart_card( $atts, $content = null ) {
     <div class="card card-block d-flex sport-container my-3 mx-3"
         style="background-color: <?php echo esc_attr($a['farbe']); ?>;">
         <div class="card-body w-100 align-items-center d-flex justify-content-center">
-            <h4 class="card-title word-wrap text-center"> <?php echo $content ?> </h4>
+            <h4 class="card-title word-wrap text-center courgette"> <?php echo $content ?> </h4>
         </div>
     </div>
 </a>

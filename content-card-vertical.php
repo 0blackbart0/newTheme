@@ -1,5 +1,5 @@
-<div class="card col-md-6   mx-md-1 mb-5 my-card" >
-    <div class="row card-header">
+<div class="card col-12 col-md-8   mx-md-1 mb-5 blue-card" >
+    <div class="row card-header" id="card-header">
         <h4> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
     </div>
 

@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
     $postleitzahl = $_POST['postleitzahl'];
     $ort = $_POST['ort'];
     $telefon = $_POST['telefon'];
-    $email = $_POST['email'];
+    $email = sanitize_email( $_POST['email']);
     $kontoinhaber = $_POST['kontoinhaber'];
     $kreditinstitut = $_POST['kreditinstitut'];
     $bic = $_POST['bic'];
@@ -33,6 +33,12 @@ if(isset($_POST['submit'])){
 
 <div class="container my-5">
     <div class="row justify-content-center">
+        <div class="col-sm-10 my-5">
+            <?php if (have_posts()) : while ( have_posts(  )) : the_post(); ?>
+                <h4><?php the_title(); ?></h4>
+                <div class="mt-3"><?php the_content(); ?></div>
+            <?php endwhile; endif; ?>
+        </div>
         <div class="col-md-10 col-lg-8">
             <form class="justify-content-center" action="" method="post">
                 <h4>Anschrift:</h4>

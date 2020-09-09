@@ -1,15 +1,16 @@
 <?php   get_header(); ?>
 <div class="container-fluid">
-    
-   
 
 
-            <?php 
+
+
+    <?php 
         
-            $formatted = '';
-            $last_was_video = false;
+        $formatted = '';
+        $last_was_video = false;
 
             if (have_posts()) : while ( have_posts(  )) : the_post();
+                console_log(get_the_content( ));
                 preg_match_all("|<[^>]+>(.*)</[^>]+>|U",get_the_content(), $content, PREG_SET_ORDER);
                 //go through every delivered HTML Tag
                 foreach($content as $piece){
@@ -34,23 +35,22 @@
                 }
 
             ?>
-            <div class="row justify-content-center my-3">
-                <div class="col text-center">
-                    <h3><?php the_title() ?></h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-10">
-                    <?php 
+    <div class="row justify-content-center my-3">
+        <div class="col text-center">
+            <h3><?php the_title() ?></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <?php 
+            echo $formatted;
+            endwhile; endif;?>
+        </div>
+    </div>
 
-                    echo $formatted;
-                endwhile; endif;?>
-                </div>
-            </div>
 
 
-        
-    
+
 </div>
 
 

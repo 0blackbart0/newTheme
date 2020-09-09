@@ -2,38 +2,56 @@
 
 <div class="container-fluid my-5">
     <div class="row justify-content-center my-5">
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <h4 class="text-center">Aktuelles</h4>
             <hr>
+            <div class="row justify-content-around my-5">
+                <div class="col">
+                    <div class="row justify-content-center">
+
+
+                        <?php
+                        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+                        $query = new WP_Query( array(
+                        'posts_per_page' => 10,
+                        'paged' => $paged
+                        ));
+                        ?>
+
+                        <?php if ( $query->have_posts() ) : ?>
+
+                        <!-- begin loop -->
+                        <?php while ( $query->have_posts() ) : $query->the_post(); 
+
+                        get_template_part( 'content-card-vertical', get_post_format() );
+
+                        endwhile; ?>
+                        <!-- end loop -->
+
+
+                        <?php wp_reset_postdata(); ?>
+                        <?php endif; ?>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4 order-first order-md-last">
+                    <?php get_search_form(); ?>
+                    <div class="col d-none d-md-block text-center">
+                        <?php dynamic_sidebar( 'aktuelles-sidebar' ); ?>
+                    </div>
+                </div>
+                <div class="col-12 d-md-none text-center">
+                    <?php dynamic_sidebar( 'aktuelles-sidebar' ); ?>
+                </div>
+
+            </div>
+
         </div>
     </div>
-    <div class="row justify-content-center my-5">
 
 
-        <?php
-        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-        $query = new WP_Query( array(
-        'posts_per_page' => 10,
-        'paged' => $paged
-        ));
-        ?>
 
-        <?php if ( $query->have_posts() ) : ?>
-
-        <!-- begin loop -->
-        <?php while ( $query->have_posts() ) : $query->the_post(); 
-
-        get_template_part( 'content-card-vertical', get_post_format() );
-
-        endwhile; ?>
-        <!-- end loop -->
-
-
-        <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
-
-
-    </div>
     <div class="row justify-content-center">
         <div class="col">
             <nav aria-label="Navigation aller Beiträge">
@@ -57,7 +75,6 @@
 
                         if(is_array($pages)){
                             foreach($pages as $page){
-                                console_log($page);
                                 $page = str_replace('class="page-numbers"', 'class="page-link"', $page );
                                 $page = str_replace('class="next page-numbers"', 'class="page-link"', $page );
                                 $page = str_replace('class="prev page-numbers"', 'class="page-link"', $page );

@@ -19,11 +19,8 @@
                             <h4>Keine Beiträge gefunden!</h4>
                         </div>
                         <?php endif; ?>
-
-
                     </div>
                 </div>
-
                 <div class="col-12 col-md-4 order-first order-md-last">
                     <?php get_search_form(); ?>
                     <div class="col d-none d-md-block text-center">
@@ -33,13 +30,9 @@
                 <div class="col-12 d-md-none text-center">
                     <?php dynamic_sidebar( 'aktuelles-sidebar' ); ?>
                 </div>
-
             </div>
-
         </div>
     </div>
-
-
 
     <div class="row justify-content-center">
         <div class="col">
@@ -56,7 +49,5 @@
         </div>
     </div>
 </div>
-
-
 
 <?php get_footer(); ?>

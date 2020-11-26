@@ -129,46 +129,85 @@ add_action( 'init', 'register_menus' );
 
     
     $wp_customize->add_setting( 'ktb-display-header',
-    array(
-       'default' => 0,
-    )
- );
+        array(
+        'default' => 0,
+        )
+    );
   
- $wp_customize->add_control( 'ktb-display-header',
-    array(
-       'label' => 'Video im Header anzeigen?' ,
-       'section'  => 'ktb-header-section',
-       'type'=> 'checkbox',
-    )
- );
+    $wp_customize->add_control( 'ktb-display-header',
+        array(
+        'label' => 'Video im Header anzeigen?' ,
+        'section'  => 'ktb-header-section',
+        'type'=> 'checkbox',
+        )
+    );
 
 
 
 
     $wp_customize->add_setting( 'ktb-header-video',
-   array(
-      'default' => '',
-      'transport' => 'refresh',
-      'sanitize_callback' => 'absint',
-             'type' => 'theme_mod',
-   )
-);
+        array(
+            'default' => '',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'absint',
+                    'type' => 'theme_mod',
+        )
+    );
 
     $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'ktb-header-video',
-   array(
-      'label' => __( 'Header Video' ),
-      'description' => esc_html__( 'This is the description for the Media Control' ),
-      'section' => 'ktb-header-section',
-      'mime_type' => 'video',  // Required. Can be image, audio, video, application, text
-   )
-) );
+        array(
+            'label' => __( 'Header Video' ),
+            'description' => esc_html__( 'Das Video wird bei großen Geräten als Startseite angezeigt.' ),
+            'section' => 'ktb-header-section',
+            'mime_type' => 'video', 
+        )
+    ));
 
 
  }
 
  add_action( 'customize_register', 'ktb_header_callout' );
 
+ /**
+  * Header logo callout section
+  */
 
+  function ktb_header_information($wp_customize){
+    $wp_customize->add_section('ktb_logo_section', array(
+        'title' => 'Header Logo',
+        'priority' => 2,
+    ));
+
+    $wp_customize->add_setting('ktb-logo');
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control(
+        $wp_customize, 'ktb-logo-control', array(
+            'label' => 'Logo',
+            'flex_width'        => false, 
+            'flex_height'       => false,
+            'width'             => 80,
+            'height'            => 80,
+            'section' => 'ktb_logo_section',
+            'settings' => 'ktb-logo',
+        )
+        ));
+
+    $wp_customize->add_setting('ktb-info-text');
+
+    $wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'ktb-info-text-controll',
+		    array(
+		        'label'    => 'Text nach dem Logo',
+		        'section'  => 'ktb_logo_section',
+		        'settings' => 'ktb-info-text',
+		        'type'     => 'text'
+		    )
+	    )
+	);
+  }
+
+  add_action( 'customize_register', 'ktb_header_information' );
  /**
   * Index Slider callout section
   */

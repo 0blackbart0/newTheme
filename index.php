@@ -10,15 +10,16 @@
     </div>
 
     <div class="row my-5 justify-content-around">
-        <div class="col-md-4 my-4">
-            <h6 class="text-center">Anstehende Termine:</h6>
-            <hr>
-            <div>
-                <?php dynamic_sidebar( 'termine' ); ?>
+        <?php if(is_active_sidebar('termine' )): ?>
+            <div class="col-md-4 my-4">
+                <h6 class="text-center">Anstehende Termine:</h6>
+                <hr>
+                <div>
+                    <?php dynamic_sidebar( 'termine' ); ?>
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
         <div class="col-md-4  my-3">
-
             <div id="carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner rounded-circle">
                     <?php if(get_theme_mod('ktb-slider-image0') != null): ?>
@@ -51,20 +52,20 @@
                             src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-slider-image4')); ?>" alt="Bild 5">
                     </div>
                     <?php endif; ?>
-
                 </div>
             </div>
 
 
         </div>
-        <div class="col-md-4 my-4">
-            <h6 class="text-center">Trainingsausfälle:</h6>
-            <hr>
-            <div>
-                <?php dynamic_sidebar( 'trainingsasusfealle' ); ?>
+        <?php if(is_active_sidebar('trainingsasusfealle' )): ?>
+            <div class="col-md-4 my-4">
+                <h6 class="text-center">Trainingsausfälle:</h6>
+                <hr>
+                <div>
+                    <?php dynamic_sidebar( 'trainingsasusfealle' ); ?>
+                </div>
             </div>
-        </div>
-
+        <?php endif; ?>
     </div>
 </div>
 <div class="container my-3">
@@ -83,8 +84,6 @@
                 get_template_part( 'content-card-horizontal', get_post_format() );
             endwhile; ?>
         <?php endif; ?>
-
-
 
     </div>
 

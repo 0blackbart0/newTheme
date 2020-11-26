@@ -2,7 +2,6 @@
 <html lang="de">
 
 <head>
-    <?php wp_meta(); ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,9 +32,14 @@
         <?php endif; ?>
         <nav id="navbar" class="navbar navbar-expand-lg navbar-light blog-masthead">
 
-            <a href="<?php echo get_home_url() ?>" class="navbar-brand">
-                <img id="KTBlogo" src="<?php echo get_bloginfo('template_directory'); ?> /images/KTB_Logo_Groß.png">
-            </a>
+            <div class="d-flex col align-items-center">
+                <a href="<?php echo get_home_url() ?>" class="navbar-brand">
+                    <img src="<?php echo wp_get_attachment_url(get_theme_mod('ktb-logo')); ?>" alt="KTB Logo">
+                </a>
+
+                <p class="logo-headline"><?php echo get_theme_mod('ktb-info-text'); ?></p>
+            </div>
+
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
                 <span class="navbar-toggler-icon"></span>
@@ -43,17 +47,17 @@
 
 
             <?php
-        wp_nav_menu( array(
-            'theme_location'    => 'primary',
-            'depth'             => 2,
-            'container'         => 'div',
-            'container_class'   => 'collapse navbar-collapse',
-            'container_id'      => 'navbarMenu',
-            'menu_class'        => 'nav navbar-nav ml-auto',
-            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'            => new WP_Bootstrap_Navwalker(),
-        ) );
-        ?>
+                wp_nav_menu( array(
+                    'theme_location'    => 'primary',
+                    'depth'             => 2,
+                    'container'         => 'div',
+                    'container_class'   => 'collapse navbar-collapse',
+                    'container_id'      => 'navbarMenu',
+                    'menu_class'        => 'nav navbar-nav ml-auto',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker(),
+                ) );
+            ?>
         </nav>
         <div class="container-fluid headerSeperator">
             <div class="row">

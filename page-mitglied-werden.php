@@ -39,6 +39,7 @@ if(isset($_POST['submit'])){
                 <div class="mt-3"><?php the_content(); ?></div>
             <?php endwhile; endif; ?>
         </div>
+        <!--
         <div class="col-md-10 col-lg-8">
             <form class="justify-content-center" action="" method="post">
                 <h4>Anschrift:</h4>
@@ -127,6 +128,7 @@ if(isset($_POST['submit'])){
                 <button class="btn btn-primary" type="submit" name="submit">Abschicken</button>
             </form>
         </div>
+        -->
     </div>
 </div>
 

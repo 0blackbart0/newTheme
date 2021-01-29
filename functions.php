@@ -8,17 +8,13 @@ function console_log( $data ){
   }
 
 
-/**
- * Adding Styles and loading bootstrap
- */
 function addStyleSheets() {
     wp_enqueue_style( 'style', get_stylesheet_uri());
-    wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' );
-    wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Courgette' );
+    wp_enqueue_style( 'bootstrap', get_bloginfo('template_directory') . '/static/bootstrap/css/bootstrap.min.css' );
 
     wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js' );
     wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' );
-    wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' );
+    wp_enqueue_script( 'bootstrap', get_bloginfo('template_directory') . '/static/bootstrap/js/bootstrap.min.js' );
     wp_enqueue_script( 'fontawsome', 'https://kit.fontawesome.com/f15d66abf7.js' );
     
    
@@ -92,6 +88,14 @@ function widgets_init() {
     register_sidebar( array(
 		'name'          => 'footer partner',
 		'id'            => 'footer-partner',
+		'before_widget' => '<div class="col-xs-1 col-sm-4 col-lg-2 text-center image-container d-block d-sm-flex">',
+		'after_widget'  => '</div>',
+		'before_title'  => '',
+		'after_title'   => '',
+    ) );
+    register_sidebar( array(
+		'name'          => 'Vereins sidebar',
+		'id'            => 'vereins-sidebar',
 		'before_widget' => '<div class="col-xs-1 col-sm-4 col-lg-2 text-center image-container d-block d-sm-flex">',
 		'after_widget'  => '</div>',
 		'before_title'  => '',

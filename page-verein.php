@@ -21,11 +21,7 @@
         ?>
         </div>
         <div class="col-sm-4 my-5">
-            <h5>Adresse:</h5>
-            <p>Vereinsheim Kieler TB / Geschäftsstelle Kieler TB</p>
-            <p>Breiter Weg 11</p>
-            <p>24105 Kiel</p>
-            <p>Telefon: 0431 / 56 12 17</p>
+        <?php dynamic_sidebar( 'vereins-sidebar' ); ?>
         </div>
     </div>
 </div>

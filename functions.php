@@ -72,10 +72,10 @@ function widgets_init() {
     register_sidebar( array(
 		'name'          => 'Aktuelles sidebar',
 		'id'            => 'aktuelles-sidebar',
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '',
-		'after_title'   => '',
+		'before_widget' => '<hr><div class="text-left my-5">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<p class="my-2"><strong>',
+		'after_title'   => '</p></strong></br>',
     ) );
     register_sidebar( array(
 		'name'          => 'Archive sidebar',

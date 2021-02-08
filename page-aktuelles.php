@@ -13,24 +13,25 @@
                         <?php
                         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
                         $query = new WP_Query( array(
-                        'posts_per_page' => 10,
-                        'paged' => $paged
+                            'posts_per_page' => 10,
+                            'paged' => $paged
                         ));
-                        ?>
+                        
 
-                        <?php if ( $query->have_posts() ) : ?>
+                        if ( $query->have_posts() ) :
 
-                        <!-- begin loop -->
-                        <?php while ( $query->have_posts() ) : $query->the_post(); 
+                        // <!-- begin loop -->
+                        while ( $query->have_posts() ) : $query->the_post(); 
 
                         get_template_part( 'content-card-vertical', get_post_format() );
 
-                        endwhile; ?>
-                        <!-- end loop -->
+                        endwhile; 
+                        // <!-- end loop -->
 
 
-                        <?php wp_reset_postdata(); ?>
-                        <?php endif; ?>
+                        wp_reset_postdata(); 
+                        endif; 
+                        ?>
 
                     </div>
                 </div>
